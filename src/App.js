@@ -1,7 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+const { ipcRenderer } = window.require("electron");
 
 function App() {
+  setTimeout(() => {
+    ipcRenderer.send("hello", "hello from app.js");
+  }, 3000);
   return (
     <div className="App">
       <header className="App-header">
